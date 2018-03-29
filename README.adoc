@@ -30,6 +30,11 @@ To run docker, excute this command in a ternimal:
 docker run -d --name jenkins -p 8080:8080 -p 50000:50000 --privileged -v /jenkins_dind_home:/var/jenkins_home  -v /var/run/docker.sock:/var/run/docker.sock modenaf360/jenkins-dind:latest
 ----
 
+If want set TimeZone
+----
+docker run -d --name jenkins -p 8080:8080 -p 50000:50000 --privileged -v /jenkins_dind_home:/var/jenkins_home  -v /var/run/docker.sock:/var/run/docker.sock -e TZ=Asia/Seoul modenaf360/jenkins-dind:latest
+----
+
 Check rest index call :
 [source,shell]
 ----
