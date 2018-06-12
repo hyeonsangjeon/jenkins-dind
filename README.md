@@ -1,7 +1,7 @@
 Jenkins Docker in Docker(dind) 
 ===
 
-###This example can be used to create a Docker image using the Jenkins build automation system. , having:
+### This example can be used to create a Docker image using the Jenkins build automation system. , having:
 
 - Jenkins
 - docker
@@ -21,32 +21,32 @@ build.sh
 docker images
 ```
 
-To run docker, excute this command in a ternimal:
+##### To run docker, excute this command in a ternimal:
 ```console
 docker run -d --name jenkins -p 8080:8080 -p 50000:50000 --privileged -v /jenkins_dind_home:/var/jenkins_home  -v /var/run/docker.sock:/var/run/docker.sock modenaf360/jenkins-dind:latest
 ```
 
-If want set TimeZone
+##### If want set TimeZone
 ```console
 docker run -d --name jenkins -p 8080:8080 -p 50000:50000 --privileged -v /jenkins_dind_home:/var/jenkins_home  -v /var/run/docker.sock:/var/run/docker.sock -e TZ=Asia/Seoul modenaf360/jenkins-dind:latest
 ```
 
-Check rest index call :
+##### Check rest index call :
 ```console
 http://localhost:8080
 ```
 
-If you want to get into docker container os, excute this command [2] :
+##### If you want to get into docker container os, excute this command [2] :
 ```console
 docker exec -i -t jenkins /bin/bash
 ```
 
-And let's check if the docker command is called well in the docker container.  :
+##### And let's check if the docker command is called well in the docker container.  :
 ```console
 docker images
 ```
 
-# docker options are as follows,
+## docker options are as follows,
 
 |Variables      |Description                                                   |
 |---------------|--------------------------------------------------------------|
@@ -59,7 +59,7 @@ docker images
 |'-t'           |using bash TTY mode (pseudo-TTY)                              |
 
 
-# Reference
+## Reference
 [1].https://docs.docker.com/engine/installation/
 [2].https://docs.docker.com/engine/reference/commandline/cli/#environment-variables
 
