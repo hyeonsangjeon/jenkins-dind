@@ -11,12 +11,12 @@ Jenkins Docker in Docker(dind)
 #### To try the example, you need to have a docker installed on your OS. And needed sudoers account permission[1]
 
 
-##### After docker installation, execute this command to bake a docker image in a terminal:
+ After docker installation, execute this command to bake a docker image in a terminal:
 ```console
 build.sh
 ```
 
-##### Let's make sure that the build is normally done.:  
+ Let's make sure that the build is normally done.:  
 ```console
 docker images
 ```
@@ -31,17 +31,17 @@ docker run -d --name jenkins -p 8080:8080 -p 50000:50000 --privileged -v /jenkin
 docker run -d --name jenkins -p 8080:8080 -p 50000:50000 --privileged -v /jenkins_dind_home:/var/jenkins_home  -v /var/run/docker.sock:/var/run/docker.sock -e TZ=Asia/Seoul modenaf360/jenkins-dind:latest
 ```
 
-##### Check rest index call :
+ Check rest index call :
 ```console
 http://localhost:8080
 ```
 
-##### If you want to get into docker container os, excute this command [2] :
+ If you want to get into docker container os, excute this command [2] :
 ```console
 docker exec -i -t jenkins /bin/bash
 ```
 
-##### And let's check if the docker command is called well in the docker container.  :
+ And let's check if the docker command is called well in the docker container.  :
 ```console
 docker images
 ```
