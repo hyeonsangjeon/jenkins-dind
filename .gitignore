@@ -17,6 +17,7 @@ local.properties
 .checkstyle
 log_data/
 *.log
+*.iml
 
 
 # External tool builders
